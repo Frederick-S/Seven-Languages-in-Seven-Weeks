@@ -10,6 +10,6 @@ fib := method(n,
         )
     )
 
-    return current
+    current
 )
 fib(8) println
