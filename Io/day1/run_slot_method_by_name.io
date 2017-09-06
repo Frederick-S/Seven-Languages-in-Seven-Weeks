@@ -1,3 +1,6 @@
+runSlotMethodByName := method(object, slotName, object getSlot(slotName) call)
+
 Car := Object clone
 Car drive := method("Driving ..." println)
-Car drive
+
+runSlotMethodByName(Car, "drive")
