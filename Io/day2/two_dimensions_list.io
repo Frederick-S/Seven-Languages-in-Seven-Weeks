@@ -1,16 +1,18 @@
 TwoDimensionsList := List clone
 
-dim := method(x, y, 
-    twoDimensionsList := TwoDimensionsList clone setSize(y) 
-    twoDimensionsList foreach(i, _, twoDimensionsList atPut(i, TwoDimensionsList clone setSize(x))))
+dim := method(x, y,
+    twoDimensionsList := TwoDimensionsList clone setSize(y)
+    twoDimensionsList foreach(i, _, twoDimensionsList atPut(i, TwoDimensionsList clone setSize(x)))
+)
 
 TwoDimensionsList set := method(x, y, value, at(y) atPut(x, value))
 TwoDimensionsList get := method(x, y, at(y) at(x))
 
-TwoDimensionsList transpose := method( 
+TwoDimensionsList transpose := method(
     newTwoDimensionsList := dim(self size, self at(0) size)
     newTwoDimensionsList foreach(i, row, row foreach(j, column, newTwoDimensionsList set(j, i, self get(i, j))))
-    newTwoDimensionsList)
+    newTwoDimensionsList
+)
 
 twoDimensionsList := dim(3, 4)
 twoDimensionsList println
